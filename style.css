@@ -1,4 +1,5 @@
 :root {
+  --primary-purple: hsl(281, 83%, 54%);
   --white: hsl(0, 0%, 100%);
   --light-pink: hsl(275, 100%, 97%);
   --grayish-purple: hsl(292, 16%, 49%);
@@ -22,6 +23,82 @@
 }
 
 body {
+  display: grid;
+  place-items: center;
+  font-family: "Work Sans", sans-serif;
   background-color: var(--light-pink);
   min-height: 100dvh;
+  color: var(--dark-purple);
+}
+
+h1,
+h2 {
+  font-size: 1rem;
+}
+
+.bg-container {
+  position: absolute;
+  top: -1vw;
+  z-index: -1;
+  width: 100%;
+  background-color: var(--dark-purple);
+}
+
+.card-accordion {
+  padding: 2rem;
+  background-color: var(--white);
+  max-width: 35rem;
+  margin-inline: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 50px 20px hsla(292, 42%, 14%, 0.1);
+}
+
+header h1 {
+  display: flex;
+  font-size: 2.5rem;
+}
+
+header h1 span {
+  display: block;
+  margin-right: 1rem;
+}
+
+header h1 img {
+  width: 1.75rem;
+}
+
+.content {
+  margin-top: 2rem;
+}
+
+.content header h2 {
+  transition: 100ms;
+  cursor: pointer;
+}
+
+.content header button:hover h2,
+.content header button:active h2,
+.content header button:focus-visible h2 {
+  color: var(--primary-purple);
+}
+
+.content header button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.content article:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.content article p {
+  color: var(--grayish-purple);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 1rem;
 }
