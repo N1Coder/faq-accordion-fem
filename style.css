@@ -45,7 +45,7 @@ h2 {
 }
 
 .card-accordion {
-  padding: 2rem;
+  padding: 2.75rem 2.5rem;
   background-color: var(--white);
   max-width: 37.5rem;
   margin-inline: auto;
