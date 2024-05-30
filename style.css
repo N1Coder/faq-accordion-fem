@@ -47,15 +47,20 @@ h2 {
 .card-accordion {
   padding: 2rem;
   background-color: var(--white);
-  max-width: 35rem;
+  max-width: 37.5rem;
   margin-inline: auto;
   border-radius: 0.75rem;
   box-shadow: 0 0 50px 20px hsla(292, 42%, 14%, 0.1);
 }
 
+header {
+  display: flex;
+}
+
 header h1 {
   display: flex;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 0.85;
 }
 
 header h1 span {
@@ -64,7 +69,7 @@ header h1 span {
 }
 
 header h1 img {
-  width: 1.75rem;
+  width: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 .content {
@@ -72,6 +77,7 @@ header h1 img {
 }
 
 .content header h2 {
+  font-size: clamp(0.875rem, 3vw, 1.125rem);
   transition: 100ms;
   cursor: pointer;
 }
@@ -86,6 +92,7 @@ header h1 img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: left;
   background-color: transparent;
   width: 100%;
   border: none;
@@ -100,6 +107,11 @@ header h1 img {
   margin-bottom: 2.5rem;
 }
 
+/* .content article:not(:last-child) p {
+  border-bottom: 1px solid hsla(292, 16%, 49%, 0.1);
+  padding-bottom: 1.5rem;
+} */
+
 .content article.is-opened p {
   max-height: 100vh;
   transition: max-height 1.25s ease-in-out;
@@ -108,8 +120,19 @@ header h1 img {
 .content article p {
   max-height: 0;
   color: var(--grayish-purple);
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 3vw, 1rem);
   line-height: 1.5;
   margin-top: 1rem;
   transition: max-height 0s ease-in-out;
+}
+
+@media (max-width: 576px) {
+  .card-accordion {
+    padding: 2.25rem 1.5rem;
+    max-width: 20rem;
+  }
+
+  .content header button {
+    gap: 2.75rem;
+  }
 }
